@@ -11,6 +11,9 @@ export default {
     },
     action: {
       type: String
+    },
+    id: {
+      type: String
     }
   },
 
