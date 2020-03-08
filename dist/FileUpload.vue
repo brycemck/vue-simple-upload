@@ -1,5 +1,5 @@
 <template>
-  <input type="file" name="fileUpload" @change="onFileChange" :id="id">
+  <input type="file" name="fileUpload" @change="onFileChange" :id="id" :accept="accept">
 </template>
 
 <script type="text/babel">
@@ -13,6 +13,9 @@ export default {
       type: String
     },
     id: {
+      type: String
+    },
+    accept: {
       type: String
     }
   },
