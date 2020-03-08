@@ -1,5 +1,5 @@
 <template>
-  <input type="file" name="fileUpload" @change="onFileChange" :id="id">
+  <input type="file" name="fileUpload" @change="onFileChange" id="{{id}}">
 </template>
 
 <script type="text/babel">
