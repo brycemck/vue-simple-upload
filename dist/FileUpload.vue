@@ -19,10 +19,10 @@ export default {
       type: String
     }
   },
-
   data () {
     return {
-      file: null
+      file: null,
+      acceptedFileTypes: []
     }
   },
   methods: {
@@ -41,6 +41,7 @@ export default {
     },
     onFileChange (e) {
       let vm = this
+      this.acceptedFileTypes = this.accept.split(',');
 
       if (!this.target || this.target === '') {
         console.log('Please provide the target url')
@@ -59,6 +60,13 @@ export default {
         /*eslint no-undef: "error"*/
 
         this.file = files[0]
+
+        // check to see if file type is accepted before uploading
+        if (this.acceptedFileTypes.indexOf(this.file.type) == -1) {
+          console.log('unsupported filetype used')
+          return
+        }
+
         let formData = new FormData()
         formData.append('file', this.file)
 
